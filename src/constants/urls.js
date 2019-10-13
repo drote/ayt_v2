@@ -1,0 +1,1 @@
+export const search = (q) => `/search?query=${q}`;
