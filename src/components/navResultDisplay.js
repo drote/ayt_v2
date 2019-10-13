@@ -1,18 +1,18 @@
 import React from 'react';
 
-const NavResultDisplay = ({ title, imgUrl }) => {
+const NavResultDisplay = ({ heading, imgUrl }) => {
 	return (
-		<div class="right item">
-			<div class="ui items">
-				<div class="item">
+		<div className="right item">
+			<div className="ui items">
+				<div className="item">
 
-					<div class="middle aligned content">
-						<div class="header">{title}</div>
+					<div className="middle aligned content">
+						<div className="header">{heading}</div>
 					</div>
 
 					{
 						imgUrl ? 
-							<div id="header-image" class="ui small image">
+							<div id="header-image" className="ui small image">
 			  					<img src={imgUrl} />
 							</div>
 						:

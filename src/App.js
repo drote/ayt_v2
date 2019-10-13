@@ -5,7 +5,7 @@ import TopNav from './containers/topNav';
 function App() {
   return (
     <div>
-      <Route component={TopNav} />
+      <Route path='/' component={TopNav} />
     </div>
   );
 }

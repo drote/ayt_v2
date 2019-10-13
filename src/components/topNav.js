@@ -3,7 +3,7 @@ import logo from './../logo.png';
 import NavSearchBar from './navSearchBar';
 import NavResultDisplay from './navResultDisplay';
 
-const TopNav = ({ displayingResults, onSearch }) => {
+const TopNav = ({ displayingResults, onSearch, heading, img }) => {
 	return (
 		<header>
 			<div className="ui borderless menu">
@@ -19,8 +19,8 @@ const TopNav = ({ displayingResults, onSearch }) => {
 				{
 					displayingResults ?
 						<NavResultDisplay
-							title={''}
-							imgUrl={''}
+							heading={heading}
+							imgUrl={img}
 						/> 
 					:
 						<NavSearchBar

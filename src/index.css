@@ -5,9 +5,126 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+#editing {
+	overflow: scroll;
+}
+
+#content {
+	margin: 6px auto;
+	width: 95%;
+}
+
+#search-bar {
+	width: 50%;
+	margin-right: 30px;
+}
+
+#header-image {
+	margin-left: 35px;
+}
+
+#content .column {
+	padding: 2px;
+}
+
+.ui.grid,
+#settings {
+	direction: rtl;
+}
+
+#video-text,
+#error-message,
+.ui.modal .header {
+	text-align: right;
+}
+.ui.form .inline.fields .field > label, 
+#video-text {
+	direction: rtl;
+}
+
+.ui.modal {
+	text-align: center;
+}
+
+.thumbnail {
+	height: 100%;
+	overflow: hidden;
+}
+
+.ui.card > .content {
+	border-top: none;
+	direction: ltr;
+	padding-top: 0;
+}
+
+.content > h1.ui.header,
+.content > h2.ui.header {
+	margin-top: 1rem;
+}
+
+.content > h3.ui.header,
+.content > h4.ui.header {
+	margin-top: 0.6rem;
+}
+
+.content > h5.ui.header {
+	margin-top: 0.25rem;
+}
+
+.content .container {
+	width: 35%;
+}
+
+.one.column.centered.grid {
+	margin: 0 auto;
+	width: 80%;
+}
+
+.ui.modal > .actions {
+	text-align: left;
+}
+
+.ui.card > .segment {
+	top: 50%;
+	margin-top: -50px;
+}
+
+.content > .segment > h2 {
+	margin-top: 0.5rem;
+}
+
+.ui.form .inline.fields .field > input[type="color"] {
+	width: 100px;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 50rem;
+  border-color: rgba(0, 0, 0, 0.1);
+  padding: 3px 5px;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  background: black;
+  border-radius: 50rem;
+  height: 0.7em;
+  width: 0.7em;
+}
+
+@media only screen and (max-width: 767px) {
+	#header-image {
+		display: none;
+	}
+}
+

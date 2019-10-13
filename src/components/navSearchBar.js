@@ -26,7 +26,6 @@ class navSearchBar extends React.Component {
 					  >
 					    <i className="search icon"></i>
 					  </button>
-
 					</Link>
 
 				  <input
