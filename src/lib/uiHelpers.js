@@ -8,6 +8,16 @@ export const calculateThumbHeight = (colN) => {
 	}[colN];
 }
 
+export const textRowNumber = (rowN) => {
+	return {
+		'1': '6',
+		'2': '4',
+		'3': '2',
+		'4': '2',
+		'5': '2',
+	}[rowN];
+}
+
 export const titleAndImageSize = (thumbHeight) => {
 	return {
 		'86': {title: '2.5rem', image: 'massive'},

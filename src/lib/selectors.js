@@ -36,6 +36,10 @@ export const getColN = (state) => {
 	return state.ui.colNumber;
 }
 
+export const getRowN = (state) => {
+	return state.ui.rowNumber;
+}
+
 export const getPageN = (state) => {
 	return state.ui.pageN;
 }

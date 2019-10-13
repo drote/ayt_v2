@@ -11,8 +11,8 @@ function reducer(state = {}, action) {
 			sideBarPosition: 'left',
 			mainPosition: 'right',
 			showActionButtons: false,
-			colNumber: 5,
-			rowNumber: 5,
+			colNumber: 2,
+			rowNumber: 4,
 			pageN: 1,
 			selectedThumb: 0,
 			selectedBorderColor: 'red'

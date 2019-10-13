@@ -4,6 +4,7 @@ import Content from '../components/content';
 import {
     getContent,
     getColN,
+    getRowN,
     getSelectedThumb,
     getPageN,
     getThumbHeight,
@@ -18,6 +19,7 @@ const mapStateToProps = (state, ownProps) => {
     displayingContent,
     content: getContent(state),
     colN: getColN(state),
+    rowN: getRowN(state),
     thumbHeight: getThumbHeight(state),
     selectedThumb: getSelectedThumb(state),
     selectedBorderColor: getSelectedBorderColor(state),

@@ -1,6 +1,7 @@
 import React from 'react';
 import Thumb from './thumb';
 import { numToWord } from '../lib/helpers';
+import { textRowNumber } from '../lib/uiHelpers';
 
 const contentForPage = (content, pageN, cPP) => {
 	const str = pageN * cPP;
@@ -9,7 +10,7 @@ const contentForPage = (content, pageN, cPP) => {
 	return content.slice(str, end);
 }
 
-const Content = ({content, colN, thumbHeight, selectedThumb, selectedBorderColor, resultsPerPage, pageN }) => {
+const Content = ({content, colN, rowN, thumbHeight, selectedThumb, selectedBorderColor, resultsPerPage, pageN }) => {
 	const gridClass = `ui ${numToWord(colN)} column grid`;
 
 	return (
@@ -26,6 +27,7 @@ const Content = ({content, colN, thumbHeight, selectedThumb, selectedBorderColor
 	    				height={thumbHeight}
 	    				selected={idx === selectedThumb}
 	    				selectedBorderColor={selectedBorderColor}
+	    				textRowNumber={textRowNumber(rowN)}
 	    			/>
 	    		))
 	    	}
