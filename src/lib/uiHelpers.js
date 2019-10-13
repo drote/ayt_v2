@@ -23,7 +23,7 @@ export const calculateThumbHeight = (rowN, colN) => {
 		'5,1': '',
 		'5,2': '',
 		'5,3': '',
-		'5,4': '',
+		'5,4': '22',
 		'5,5': ''
 	}[`${rowN},${colN}`];
 }

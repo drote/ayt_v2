@@ -1,7 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import Content from '../components/content';
-import { getContent, getColN, getSelectedThumb, getPageN, getThumbHeight } from '../lib/selectors';
+import {
+    getContent,
+    getColN,
+    getSelectedThumb,
+    getPageN,
+    getThumbHeight,
+    getSelectedBorderColor,
+    getResultsPerPage
+  } from '../lib/selectors';
 
 const mapStateToProps = (state, ownProps) => {
   const displayingContent = ownProps.location.pathname.match(/\/(search|playlist|related|home)/);  
@@ -11,8 +19,10 @@ const mapStateToProps = (state, ownProps) => {
     content: getContent(state),
     colN: getColN(state),
     thumbHeight: getThumbHeight(state),
-    selectedVid: getSelectedThumb(state),
-    page: getPageN(state),
+    selectedThumb: getSelectedThumb(state),
+    selectedBorderColor: getSelectedBorderColor(state),
+    pageN: getPageN(state),
+    resultsPerPage: getResultsPerPage(state)
   };
 }
 

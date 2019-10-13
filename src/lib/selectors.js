@@ -29,7 +29,7 @@ export const getButtonsActiveStatus = (state) => {
 }
 
 export const getContent = (state) => {
-
+	return state.content;
 }
 
 export const getColN = (state) => {
@@ -40,10 +40,18 @@ export const getPageN = (state) => {
 	return state.ui.pageN;
 }
 
+export const getResultsPerPage = (state) => {
+	return state.ui.colNumber * state.ui.rowNumber;
+}
+
 export const getSelectedThumb = (state) => {
 	return state.ui.selectedThumb;
 }
 
+export const getSelectedBorderColor = (state) => {
+	return state.ui.selectedBorderColor;
+}
+
 export const getThumbHeight = (state) => {
-	return uiHelpers.calculateThumbHeight(state.ui.colNumber, state.ui.RowNumber);
+	return uiHelpers.calculateThumbHeight(state.ui.colNumber, state.ui.rowNumber);
 }

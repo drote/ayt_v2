@@ -1,4 +1,5 @@
 import { createStore as cs } from 'redux';
+import { tempResults } from './tmp';
 
 function reducer(state = {}, action) {
 	return {
@@ -13,8 +14,10 @@ function reducer(state = {}, action) {
 			colNumber: 5,
 			rowNumber: 4,
 			pageN: 1,
-			selectedThumb: 1,
-		}
+			selectedThumb: 0,
+			selectedBorderColor: 'red'
+		},
+		content: tempResults,
 	}
 }
 
