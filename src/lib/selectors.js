@@ -53,5 +53,5 @@ export const getSelectedBorderColor = (state) => {
 }
 
 export const getThumbHeight = (state) => {
-	return uiHelpers.calculateThumbHeight(state.ui.colNumber, state.ui.rowNumber);
+	return uiHelpers.calculateThumbHeight(state.ui.rowNumber);
 }

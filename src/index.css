@@ -65,24 +65,21 @@ code {
 	overflow: hidden;
 }
 
-.ui.card > .content {
+.thumbnail .ui.small.image {
+	width: 175px;
+}
+
+
+#content .ui.card > .content {
 	border-top: none;
 	direction: ltr;
-	padding-top: 0;
+	padding-top: 1%;
 }
 
-.content > h1.ui.header,
-.content > h2.ui.header {
-	margin-top: 1rem;
-}
-
-.content > h3.ui.header,
-.content > h4.ui.header {
-	margin-top: 0.6rem;
-}
-
-.content > h5.ui.header {
-	margin-top: 0.25rem;
+.img.container {
+	height: 100%;
+	background-color: white;
+	overflow: hidden;
 }
 
 .content .container {

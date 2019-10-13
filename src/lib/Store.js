@@ -12,7 +12,7 @@ function reducer(state = {}, action) {
 			mainPosition: 'right',
 			showActionButtons: false,
 			colNumber: 5,
-			rowNumber: 4,
+			rowNumber: 5,
 			pageN: 1,
 			selectedThumb: 0,
 			selectedBorderColor: 'red'

@@ -1,29 +1,19 @@
-export const calculateThumbHeight = (rowN, colN) => {
+export const calculateThumbHeight = (colN) => {
 	return {
-		'1,1': '86',
-		'1,2': '43',
-		'1,3': '',
-		'1,4': '',
-		'1,5': '',
-		'2,1': '43',
-		'2,2': '43',
-		'2,3': '43',
-		'2,4': '43',
-		'2,5': '43',
-		'3,1': '',
-		'3,2': '',
-		'3,3': '',
-		'3,4': '',
-		'3,5': '',
-		'4,1': '', 
-		'4,2': '',
-		'4,3': '',
-		'4,4': '',
-		'4,5': '',
-		'5,1': '',
-		'5,2': '',
-		'5,3': '',
-		'5,4': '22',
-		'5,5': ''
-	}[`${rowN},${colN}`];
+		'1': '86',
+		'2': '43',
+		'3': '28',
+		'4': '22',
+		'5': '17',
+	}[colN];
+}
+
+export const titleAndImageSize = (thumbHeight) => {
+	return {
+		'86': {title: '2.5rem', image: 'massive'},
+		'43': {title: '2rem', image: 'large'},
+		'28': {title: '1.3rem', image: 'medium'},
+		'22': {title: '1.3rem', image: 'small'},
+		'17': {title: '0.9rem', image: 'small'}
+	}[thumbHeight];
 }
