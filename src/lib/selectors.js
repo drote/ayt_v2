@@ -1,3 +1,5 @@
+import * as uiHelpers from './uiHelpers';
+
 export const getPageHeading = (state) => {
 	return state.ui.pageHeading;
 }
@@ -24,4 +26,24 @@ export const getMainPos = (state) => {
 
 export const getButtonsActiveStatus = (state) => {
 	return state.ui.showActionButtons;
+}
+
+export const getContent = (state) => {
+
+}
+
+export const getColN = (state) => {
+	return state.ui.colNumber;
+}
+
+export const getPageN = (state) => {
+	return state.ui.pageN;
+}
+
+export const getSelectedThumb = (state) => {
+	return state.ui.selectedThumb;
+}
+
+export const getThumbHeight = (state) => {
+	return uiHelpers.calculateThumbHeight(state.ui.colNumber, state.ui.RowNumber);
 }

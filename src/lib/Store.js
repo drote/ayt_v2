@@ -9,7 +9,11 @@ function reducer(state = {}, action) {
 			sideBarWidth: '10',
 			sideBarPosition: 'left',
 			mainPosition: 'right',
-			showActionButtons: false
+			showActionButtons: false,
+			colNumber: 5,
+			rowNumber: 4,
+			pageN: 1,
+			selectedThumb: 1,
 		}
 	}
 }
