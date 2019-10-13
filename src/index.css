@@ -27,12 +27,19 @@ code {
 	margin-right: 30px;
 }
 
+
 #header-image {
 	margin-left: 35px;
 }
 
 #content .column {
 	padding: 2px;
+}
+
+#side-buttons {
+	background-color: black;
+	height: 100vh;
+	position: relative;
 }
 
 .ui.grid,

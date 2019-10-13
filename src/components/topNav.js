@@ -3,9 +3,14 @@ import logo from './../logo.png';
 import NavSearchBar from './navSearchBar';
 import NavResultDisplay from './navResultDisplay';
 
-const TopNav = ({ displayingResults, onSearch, heading, img }) => {
+const TopNav = ({ displayingResults, onSearch, heading, img, width, side }) => {
 	return (
-		<header>
+		<header
+			style={{
+				float: side,
+				width: `${width}%`
+			}}>
+
 			<div className="ui borderless menu">
 
 				<a className="item">
