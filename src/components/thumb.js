@@ -2,7 +2,15 @@ import React from 'react';
 import { titleAndImageSize } from '../lib/uiHelpers';
 import LinesEllipsis from 'react-lines-ellipsis'
 
-const Thumb = ({ imgSrc, title, height, selected, selectedBorderColor, textRowNumber }) => {
+const Thumb = ({
+		imgSrc,
+		title,
+		height,
+		selected,
+		selectedBorderColor,
+		textRowNumber,
+		editable
+	}) => {
 	const selectedBorder = `3px ${selectedBorderColor} solid`;
 	const regularBorder = '1px black solid';
 	const sizes = titleAndImageSize(height);
@@ -17,6 +25,21 @@ const Thumb = ({ imgSrc, title, height, selected, selectedBorderColor, textRowNu
 			}}
 		>
 		  <div className="ui fluid card thumbnail">
+
+		  	{
+		  		editable ?
+		  			<div>
+				  		<a class="ui yellow right corner label">
+				        <i class="edit icon"></i>
+				      </a>
+
+				      <a class="ui left red corner label">
+				        <i class="remove icon"></i>
+				      </a>
+				    </div>
+			    :
+			    	null
+		  	}
 
 		  	<div className="ui img centered container">
 			    <img

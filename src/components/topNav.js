@@ -3,7 +3,7 @@ import logo from './../logo.png';
 import NavSearchBar from './navSearchBar';
 import NavResultDisplay from './navResultDisplay';
 
-const TopNav = ({ status, onSearch, heading, img, width, side }) => {
+const TopNav = ({ status, onSearch, heading, img, width, side, homePage }) => {
 	return (
 		<header
 			style={{
@@ -21,6 +21,15 @@ const TopNav = ({ status, onSearch, heading, img, width, side }) => {
 					<i className="big user icon"></i>
 				</a>
 
+				{
+					homePage ?
+						<a class="ui icon item">
+		          <i class="big edit icon"></i>
+		        </a>
+		      :
+		      null
+		    }
+		    
 				{
 					status === 'ready' ?
 						<NavResultDisplay

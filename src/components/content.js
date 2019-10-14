@@ -10,7 +10,18 @@ const contentForPage = (content, pageN, cPP) => {
 	return content.slice(str, end);
 }
 
-const Content = ({status, content, colN, rowN, thumbHeight, selectedThumb, selectedBorderColor, resultsPerPage, pageN }) => {
+const Content = ({
+		status,
+		content,
+		colN,
+		rowN,
+		thumbHeight,
+		selectedThumb,
+		selectedBorderColor,
+		resultsPerPage,
+		pageN,
+		editMode
+	}) => {
 	const gridClass = `ui ${numToWord(colN)} column grid`;
 
 	return (
@@ -32,6 +43,7 @@ const Content = ({status, content, colN, rowN, thumbHeight, selectedThumb, selec
 						    				selected={idx === selectedThumb}
 						    				selectedBorderColor={selectedBorderColor}
 						    				textRowNumber={textRowNumber(rowN)}
+						    				editable={editMode}
 						    			/>
 						    	))
 			    			}

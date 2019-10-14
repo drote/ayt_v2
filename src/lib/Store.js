@@ -20,7 +20,7 @@ function reducer(state = {}, action) {
 				colNumber: 2,
 				rowNumber: 4,
 				pageN: 0,
-				selectedThumb: 0,
+				selectedThumb: false,
 				selectedBorderColor: 'red',
 			}
 		},

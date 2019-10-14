@@ -3,13 +3,14 @@ import { Route, Switch } from 'react-router-dom';
 import TopNav from './containers/topNav';
 import Content from './containers/content';
 import SideButtons from './containers/sideButtons';
+import queryString from 'query-string';
 
 function App() {
   return (
     <div>
       <SideButtons />
       <Route
-        path='/(|search|playlist|related)'
+        path='/(|search|playlist|related|home)'
         render={({ location }) => (
           <div>
             <TopNav location={location} />

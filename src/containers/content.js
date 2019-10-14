@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import queryString from 'query-string';
+
 import Content from '../components/content';
 import {
     getContent,
@@ -13,11 +15,15 @@ import {
     getContentStatus
   } from '../lib/selectors';
 
-const mapStateToProps = (state, ownProps) => {
-  const displayingContent = ownProps.location.pathname.match(/\/(search|playlist|related|home)/);  
+const editing = (location) => {
+  return queryString.parse(location.search).editing === 'true'
+         && location.pathname.match('/home');
+}
 
+const mapStateToProps = (state, ownProps) => {
+  const editMode = editing(ownProps.location);
+  
   return {
-    displayingContent,
     content: getContent(state),
     colN: getColN(state),
     rowN: getRowN(state),
@@ -26,7 +32,8 @@ const mapStateToProps = (state, ownProps) => {
     selectedBorderColor: getSelectedBorderColor(state),
     pageN: getPageN(state),
     resultsPerPage: getResultsPerPage(state),
-    status: getContentStatus(state)
+    status: getContentStatus(state),
+    editMode
   };
 }
 

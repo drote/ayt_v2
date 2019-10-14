@@ -9,7 +9,8 @@ const mapStateToProps = (state, ownProps) => {
     heading: getPageHeading(state),
     img: getHeadingImage(state),
     width: getMainWidth(state),
-    side: getMainPos(state)
+    side: getMainPos(state),
+    homePage: ownProps.location.pathname.match('/home')
   };
 }
 
