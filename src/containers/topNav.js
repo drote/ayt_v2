@@ -1,13 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import TopNav from '../components/topNav';
-import { getPageHeading, getHeadingImage, getMainWidth, getMainPos } from '../lib/selectors';
+import { getPageHeading, getHeadingStatus, getHeadingImage, getMainWidth, getMainPos } from '../lib/selectors';
 
 const mapStateToProps = (state, ownProps) => {
-  const displayingResults = ownProps.location.pathname.match(/\/(search|playlist|related)/);  
-
   return {
-    displayingResults,
+    status: getHeadingStatus(state),
     heading: getPageHeading(state),
     img: getHeadingImage(state),
     width: getMainWidth(state),

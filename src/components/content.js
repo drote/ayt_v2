@@ -10,29 +10,40 @@ const contentForPage = (content, pageN, cPP) => {
 	return content.slice(str, end);
 }
 
-const Content = ({content, colN, rowN, thumbHeight, selectedThumb, selectedBorderColor, resultsPerPage, pageN }) => {
+const Content = ({status, content, colN, rowN, thumbHeight, selectedThumb, selectedBorderColor, resultsPerPage, pageN }) => {
 	const gridClass = `ui ${numToWord(colN)} column grid`;
 
 	return (
 	  <div id="content">
-	    <div className={gridClass}>
 
 	    	{
-	    		contentForPage(content, pageN, resultsPerPage).map((t, idx) => (
-	    			<Thumb
-	    				key={idx}
-	    				title={t.title}
-	    				imgSrc={t.imgUrl}
-	    				vidId={t.vidId}
-	    				height={thumbHeight}
-	    				selected={idx === selectedThumb}
-	    				selectedBorderColor={selectedBorderColor}
-	    				textRowNumber={textRowNumber(rowN)}
-	    			/>
-	    		))
+	    		{
+	    			'active': (
+	    				<div className={gridClass}>
+		    				{
+				    			contentForPage(content, pageN, resultsPerPage)
+				    				.map((t, idx) => (
+					    				<Thumb
+						    				key={idx}
+						    				title={t.title}
+						    				imgSrc={t.imgUrl}
+						    				vidId={t.vidId}
+						    				height={thumbHeight}
+						    				selected={idx === selectedThumb}
+						    				selectedBorderColor={selectedBorderColor}
+						    				textRowNumber={textRowNumber(rowN)}
+						    			/>
+						    	))
+			    			}
+		    			</div>
+	    			),
+	    			'loading': (
+				    	<div className="ui massive active loader"></div>
+						),
+	    			'inactive': null
+	    		}[status]
 	    	}
 
-	    </div>
 	  </div>
 	)
 }

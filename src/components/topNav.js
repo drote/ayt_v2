@@ -3,7 +3,7 @@ import logo from './../logo.png';
 import NavSearchBar from './navSearchBar';
 import NavResultDisplay from './navResultDisplay';
 
-const TopNav = ({ displayingResults, onSearch, heading, img, width, side }) => {
+const TopNav = ({ status, onSearch, heading, img, width, side }) => {
 	return (
 		<header
 			style={{
@@ -22,15 +22,16 @@ const TopNav = ({ displayingResults, onSearch, heading, img, width, side }) => {
 				</a>
 
 				{
-					displayingResults ?
+					status === 'ready' ?
 						<NavResultDisplay
 							heading={heading}
 							imgUrl={img}
-						/> 
+						/>
 					:
 						<NavSearchBar
 							onSearch={onSearch}
-						/> 
+							loading={status === 'loading'}
+						/>
 				}
 
 				<div className="right item">

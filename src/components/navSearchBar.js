@@ -22,7 +22,7 @@ class navSearchBar extends React.Component {
 
 					<Link to={search(this.state.value)}>
 					  <button
-					  	className="ui huge icon button"
+					  	className={`ui huge icon button ${this.props.loading ? 'loading' : ''}`}
 					  >
 					    <i className="search icon"></i>
 					  </button>

@@ -9,7 +9,8 @@ import {
     getPageN,
     getThumbHeight,
     getSelectedBorderColor,
-    getResultsPerPage
+    getResultsPerPage,
+    getContentStatus
   } from '../lib/selectors';
 
 const mapStateToProps = (state, ownProps) => {
@@ -24,7 +25,8 @@ const mapStateToProps = (state, ownProps) => {
     selectedThumb: getSelectedThumb(state),
     selectedBorderColor: getSelectedBorderColor(state),
     pageN: getPageN(state),
-    resultsPerPage: getResultsPerPage(state)
+    resultsPerPage: getResultsPerPage(state),
+    status: getContentStatus(state)
   };
 }
 
