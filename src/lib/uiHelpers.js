@@ -1,11 +1,29 @@
-export const calculateThumbHeight = (colN) => {
+const imageSize = (rowN) => {
+	return titleAndImageSize(thumbHeight(rowN)).image;
+}
+
+const thumbHeight = (rowN) => {
 	return {
 		'1': '86',
 		'2': '43',
 		'3': '28',
 		'4': '22',
 		'5': '17',
-	}[colN];
+	}[rowN];
+}
+
+const numToWord = (n) => {
+	return {
+		'1': 'one',
+		'2': 'two',
+		'3': 'three',
+		'4': 'four',
+		'5': 'five'
+	}[n];
+}
+
+export const thumbHeightStyle = (rowN) => {
+	return `${thumbHeight(rowN)}vh`;
 }
 
 export const textRowNumber = (rowN) => {
@@ -27,3 +45,9 @@ export const titleAndImageSize = (thumbHeight) => {
 		'17': {title: '0.9rem', image: 'small'}
 	}[thumbHeight];
 }
+
+export const selectedBorderStyle = (color) => `3px ${color} solid`;
+export const regularBorderStyle = () => '1px black solid';
+export const imageClass = (rowN) => `ui centered ${imageSize(rowN)} image`;
+export const titleSize = (rowN) => titleAndImageSize(thumbHeight(rowN)).title;
+export const gridClass = (colN) => `ui ${numToWord(colN)} column grid`;

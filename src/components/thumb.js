@@ -3,31 +3,29 @@ import { titleAndImageSize } from '../lib/uiHelpers';
 import LinesEllipsis from 'react-lines-ellipsis'
 
 const Thumb = ({
-		imgSrc,
-		title,
-		height,
-		selected,
-		selectedBorderColor,
-		textRowNumber,
-		editable
-	}) => {
-	const selectedBorder = `3px ${selectedBorderColor} solid`;
-	const regularBorder = '1px black solid';
-	const sizes = titleAndImageSize(height);
-	const imageClass = `ui centered ${sizes.image} image`;
-
+	title,
+	imgSrc,
+	height,
+	showEditButtons,
+	selected,
+	textRowNumber,
+	titleSize,
+	imageClass,
+	selectedBorderStyle,
+	regularBorderStyle
+}) => {
 	return (
 		<div
 			className="column"
 			style={{
-				height: `${height}vh`,
-				border: `${selected ? selectedBorder : regularBorder}`,
+				height,
+				border: `${selected ? selectedBorderStyle : regularBorderStyle}`,
 			}}
 		>
 		  <div className="ui fluid card thumbnail">
 
 		  	{
-		  		editable ?
+		  		showEditButtons ?
 		  			<div>
 				  		<a class="ui yellow right corner label">
 				        <i class="edit icon"></i>
@@ -51,7 +49,7 @@ const Thumb = ({
 		    <div className="content">
 		      <h1
 		      	style={{
-		      		fontSize: sizes.title
+		      		fontSize: titleSize
 		      	}}
 		      >
 		      	<LinesEllipsis

@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import TopNav from '../components/topNav';
-import { getPageHeading, getHeadingStatus, getHeadingImage, getMainWidth, getMainPos } from '../lib/selectors';
+import { getPageHeading, getSearchStatus, getHeadingImage, getMainWidth, getMainPos } from '../lib/selectors';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    status: getHeadingStatus(state),
+    status: getSearchStatus(state),
     heading: getPageHeading(state),
     img: getHeadingImage(state),
     width: getMainWidth(state),

@@ -1,9 +1,6 @@
-export const numToWord = (n) => {
-	return {
-		'1': 'one',
-		'2': 'two',
-		'3': 'three',
-		'4': 'four',
-		'5': 'five'
-	}[n];
+export const contentForPage = (content, pageN, cPP) => {
+	const str = pageN * cPP;
+	const end = str + cPP;
+
+	return content.slice(str, end);
 }

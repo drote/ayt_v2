@@ -23,15 +23,15 @@ const TopNav = ({ status, onSearch, heading, img, width, side, homePage }) => {
 
 				{
 					homePage ?
-						<a class="ui icon item">
-		          <i class="big edit icon"></i>
+						<a className="ui icon item">
+		          <i className="big edit icon"></i>
 		        </a>
 		      :
 		      null
 		    }
 		    
 				{
-					status === 'ready' ?
+					status === 'active' ?
 						<NavResultDisplay
 							heading={heading}
 							imgUrl={img}

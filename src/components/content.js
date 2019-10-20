@@ -1,32 +1,20 @@
 import React from 'react';
-import Thumb from './thumb';
+import EditableThumb from '../containers/editableThumb';
 import { numToWord } from '../lib/helpers';
-import { textRowNumber } from '../lib/uiHelpers';
-
-const contentForPage = (content, pageN, cPP) => {
-	const str = pageN * cPP;
-	const end = str + cPP;
-
-	return content.slice(str, end);
-}
+import { contentForPage } from '../lib/helpers';
 
 const Content = ({
 		status,
 		content,
-		colN,
-		rowN,
-		thumbHeight,
 		selectedThumb,
-		selectedBorderColor,
 		resultsPerPage,
 		pageN,
-		editMode
+		gridClass,
+		location
 	}) => {
-	const gridClass = `ui ${numToWord(colN)} column grid`;
 
 	return (
 	  <div id="content">
-
 	    	{
 	    		{
 	    			'active': (
@@ -34,16 +22,14 @@ const Content = ({
 		    				{
 				    			contentForPage(content, pageN, resultsPerPage)
 				    				.map((t, idx) => (
-					    				<Thumb
+					    				<EditableThumb
 						    				key={idx}
 						    				title={t.title}
 						    				imgSrc={t.imgUrl}
 						    				vidId={t.vidId}
-						    				height={thumbHeight}
+						    				fullUrl={t.url}
 						    				selected={idx === selectedThumb}
-						    				selectedBorderColor={selectedBorderColor}
-						    				textRowNumber={textRowNumber(rowN)}
-						    				editable={editMode}
+						    				location={location}
 						    			/>
 						    	))
 			    			}
@@ -55,7 +41,6 @@ const Content = ({
 	    			'inactive': null
 	    		}[status]
 	    	}
-
 	  </div>
 	)
 }

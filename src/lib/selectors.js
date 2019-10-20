@@ -8,12 +8,8 @@ export const getHeadingImage = (state) => {
 	return state.ui.heading.imgUrl;
 }
 
-export const getHeadingStatus = (state) => {
-	return state.ui.heading.status;
-}
-
 export const getSideBarWidth = (state) => {
-	return state.ui.sideBarWidth;
+	return state.ui.sideBar.width;
 }
 
 export const getMainWidth = (state) => {
@@ -21,7 +17,7 @@ export const getMainWidth = (state) => {
 }
 
 export const getSideBarPos = (state) => {
-	return state.ui.sideBarPosition;
+	return state.ui.sideBar.position;
 }
 
 export const getMainPos = (state) => {
@@ -29,27 +25,19 @@ export const getMainPos = (state) => {
 }
 
 export const getButtonsActiveStatus = (state) => {
-	return state.ui.showActionButtons;
+	return state.ui.sideBar.showActionButtons;
 }
 
-export const getContent = (state) => {
-	return state.content;
-}
-
-export const getContentStatus = (state) => {
-	return state.ui.content.status;
-}
-
-export const getColN = (state) => {
-	return state.ui.content.colNumber;
-}
-
-export const getRowN = (state) => {
-	return state.ui.content.rowNumber;
+export const getSearchStatus = (state) => {
+	return state.searchStatus;
 }
 
 export const getPageN = (state) => {
 	return state.ui.content.pageN;
+}
+
+export const getGridClass = (state) => {
+	return uiHelpers.gridClass(state.ui.content.colNumber);
 }
 
 export const getResultsPerPage = (state) => {
@@ -57,13 +45,41 @@ export const getResultsPerPage = (state) => {
 }
 
 export const getSelectedThumb = (state) => {
-	return state.ui.content.selectedThumb;
+	return state.selectedThumb;
 }
 
-export const getSelectedBorderColor = (state) => {
-	return state.ui.content.selectedBorderColor;
+export const getSelectedBorderStyle = (state) => {
+	return uiHelpers.selectedBorderStyle(state.ui.thumb.selectedBorderColor);
+}
+
+export const getRegularBorderStyle = () => {
+	return uiHelpers.regularBorderStyle();
+}
+
+export const getNumberOfTextRows = (state) => {
+	return uiHelpers.textRowNumber(state.ui.content.rowNumber);
 }
 
 export const getThumbHeight = (state) => {
-	return uiHelpers.calculateThumbHeight(state.ui.content.rowNumber);
+	return uiHelpers.thumbHeightStyle(state.ui.content.rowNumber);
+}
+
+export const getTitleSize = (state) => {
+	return uiHelpers.titleSize(state.ui.content.rowNumber);
+}
+
+export const getImageClass = (state) => {
+	return uiHelpers.imageClass(state.ui.content.rowNumber);
+}
+
+export const getSearchErrorStatus = (state) => {
+	return state.searchStatus === 'error';
+}
+
+export const getEditingStatus = (state) => {
+	return state.mode === 'editadd resource';
+}
+
+export const getContent = (state) => {
+	return state.content;
 }
