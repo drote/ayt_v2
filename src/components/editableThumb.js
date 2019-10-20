@@ -1,5 +1,5 @@
 import React from 'react';
-import ThumbModal from './thumbModal';
+import ThumbModal from '../containers/thumbModal';
 import Thumb from './thumb';
 
 const EditableThumb = ({ editing, ...props }) => {
@@ -7,12 +7,7 @@ const EditableThumb = ({ editing, ...props }) => {
 		<React.Fragment>
 			{
 				editing ?
-					<ThumbModal
-						resourceTitle={props.title}
-						images={[props.imgSrc]}
-						resourceLink={props.fullUrl}
-						status={props.status}
-					/>
+					<ThumbModal />
 				:
 					null
 			}

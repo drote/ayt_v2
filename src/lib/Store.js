@@ -33,12 +33,14 @@ function reducer(state = {}, action) {
 		},
 		content: tempResults,
 		selectedThumb: 0,
-		editingThumb: false,
 		mode: 'viewing results',
 		searchStatus: 'active',
-		newVideo: {
-			images: [],
-			title: ''
+		modalContent: {
+			active: true,
+			thumbIdx: 0,
+			images: ['https://i.ytimg.com/vi/J5wuB_p63YM/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLC09e8FjLfUzzhADR5WOVyJIueCIg'],
+			title: 'Title',
+			url: 'www.youtube.com/aviewishere'
 		}
 
 	}

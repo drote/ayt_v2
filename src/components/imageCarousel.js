@@ -6,7 +6,6 @@ class ImageCarousel extends React.Component {
 		loading: this.props.loading
 	}
 
-
 	render() {
 		return (
 			<div className="content">
@@ -19,24 +18,15 @@ class ImageCarousel extends React.Component {
 				    </div>
 					:
 						<div className="ui segment">
+	    				<button className="ui button circular"><i className="arrow right icon"></i></button>
+	    				{
+	    					this.props.images.map((imgSrc, idx) => {
+	    						if (idx !== this.state.imageIdx) return;
 
-							{
-								this.props.images > 1 ?
-				    			<button className="ui button circular"><i className="arrow right icon"></i></button>
-				    		:
-				    			null
-							}
-						  
-						  <div className="ui img container">
-				      	<img className= "ui centered medium rounded image" src={this.props.images[this.state.imageIdx]} />
-					    </div>
-							
-							{
-								this.props.images > 1 ?
-									<button className="ui button circular"><i className="arrow left icon"></i></button>
-								:
-									null
-							}
+					      	return <img className= "ui centered medium rounded image" src={imgSrc} />
+	    					})
+	    				}
+							<button className="ui button circular"><i className="arrow left icon"></i></button>
 				    </div>
 				}
 		  </div>

@@ -10,7 +10,7 @@ import {
     getResultsPerPage,
     getSearchStatus,
     getGridClass,
-    getEditingThumb
+    getEditedThumbIdx
 } from '../lib/selectors';
 
 const editingEnabled = (location) => {
@@ -23,7 +23,7 @@ const mapStateToProps = (state, ownProps) => {
     content: getContent(state),
     gridClass: getGridClass(state),
     selectedThumb: getSelectedThumb(state),
-    editingThumb: getEditingThumb(state),
+    editedThumbIdx: getEditedThumbIdx(state),
     pageN: getPageN(state),
     resultsPerPage: getResultsPerPage(state),
     status: getSearchStatus(state),

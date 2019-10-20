@@ -1,5 +1,5 @@
 import React from 'react';
-import ThumbModal from './thumbModal';
+import ThumbModal from '../containers/thumbModal';
 
 class ToggleNewThumb extends React.Component {
 	state = {

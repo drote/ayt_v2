@@ -48,8 +48,12 @@ export const getSelectedThumb = (state) => {
 	return state.selectedThumb;
 }
 
-export const getEditingThumb = (state) => {
-	return state.editingThumb;
+export const getModalActiveStatus = (state) => {
+	return state.modalContent.active;
+}
+
+export const getEditedThumbIdx = (state) => {
+	return state.modalContent.thumbIdx
 }
 
 export const getSelectedBorderStyle = (state) => {
@@ -78,6 +82,18 @@ export const getImageClass = (state) => {
 
 export const getSearchErrorStatus = (state) => {
 	return state.searchStatus === 'error';
+}
+
+export const getImagesForModalThumb = (state) => {
+	return state.modalContent.images || '';
+}
+
+export const getUrlForModalThumb = (state) => {
+	return state.modalContent.url || '';
+}
+
+export const getTitleForModalThumb = (state) => {
+	return state.modalContent.title || '';
 }
 
 export const getContent = (state) => {

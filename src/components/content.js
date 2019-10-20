@@ -8,7 +8,7 @@ const Content = ({
 		status,
 		content,
 		selectedThumb,
-		editingThumb,
+		editedThumbIdx,
 		resultsPerPage,
 		pageN,
 		gridClass,
@@ -33,14 +33,17 @@ const Content = ({
 						    				vidId={t.vidId}
 						    				fullUrl={t.url}
 						    				selected={idx === selectedThumb}
-						    				editing={idx === editingThumb}
+						    				editing={idx === editedThumbIdx}
 						    				editingEnabled={editingEnabled}
+						    				status={status}
 						    			/>
 						    	))
 			    			}
 			    			{
 			    				editingEnabled ?
-			    					<ToggleNewThumb />
+			    					<ToggleNewThumb
+			    						status={status}
+			    					/>
 			    				:
 			    					null
 			    			}

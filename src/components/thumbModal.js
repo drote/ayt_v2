@@ -3,15 +3,14 @@ import ImageCarousel from './imageCarousel';
 
 class ThumbModal extends React.Component {
 	state = {
-		searchInput: '',
-		saveInput: this.props.resourceTitle,
-		link: this.props.resourceLink,
+		searchInput: this.props.url,
+		titleInput: this.props.title,
 		cantSearch: false,
 		editingSaved: false
 	}
 
 	render() {
-		const { images, status } = this.props;
+		const { images, status, title } = this.props;
 
 		return (
 			<div class="ui active dimmer">
@@ -58,22 +57,25 @@ class ThumbModal extends React.Component {
 							images.length <= 0 ?
 								null
 							:
-								<React.Fragment>
-									<ImageCarousel images={images} loading={status === 'loading'} />
+								<ImageCarousel images={images} loading={status === 'loading'} />
+						}
 
-								  <div className="content">
-								    	<h1>
+						{
+							title ?
+								<div className="content">
+						    	<h1>
 
-								    		{
-													this.state.editingSaved ?
-														<input value={this.state.saveInput} />
-													:
-														this.state.saveInput
-								    		}
+						    		{
+											this.state.editingSaved ?
+												<input value={this.state.titleInput} />
+											:
+												this.props.title
+						    		}
 
-								    	</h1>
-								    </div>
-								</React.Fragment>						
+						    	</h1>
+						    </div>
+						   :
+						   	null
 						}
 
 
