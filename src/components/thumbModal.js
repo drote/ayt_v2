@@ -1,7 +1,7 @@
 import React from 'react';
 import ImageCarousel from './imageCarousel';
 
-class EditThumbModal extends React.Component {
+class ThumbModal extends React.Component {
 	state = {
 		searchInput: '',
 		saveInput: this.props.resourceTitle,
@@ -95,4 +95,4 @@ class EditThumbModal extends React.Component {
 	}
 }
 
-export default EditThumbModal;
+export default ThumbModal;

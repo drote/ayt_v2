@@ -8,7 +8,8 @@ import {
     getPageN,
     getResultsPerPage,
     getSearchStatus,
-    getGridClass
+    getGridClass,
+    getEditingThumb
 } from '../lib/selectors';
 
 const mapStateToProps = (state, ownProps) => {  
@@ -16,6 +17,7 @@ const mapStateToProps = (state, ownProps) => {
     content: getContent(state),
     gridClass: getGridClass(state),
     selectedThumb: getSelectedThumb(state),
+    editingThumb: getEditingThumb(state),
     pageN: getPageN(state),
     resultsPerPage: getResultsPerPage(state),
     status: getSearchStatus(state)

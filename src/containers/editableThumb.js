@@ -9,7 +9,6 @@ import {
   getImageClass,
   getTitleSize,
   getSearchStatus,
-  getEditingStatus,
   getSearchErrorStatus,
 } from '../lib/selectors';
 
@@ -20,7 +19,6 @@ const editingEnabled = (location) => {
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    editing: getEditingStatus(state),
     showEditButtons: editingEnabled(ownProps.location),
     selected: ownProps.selected,
     height: getThumbHeight(state),

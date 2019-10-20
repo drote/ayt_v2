@@ -7,6 +7,7 @@ const Content = ({
 		status,
 		content,
 		selectedThumb,
+		editingThumb,
 		resultsPerPage,
 		pageN,
 		gridClass,
@@ -29,6 +30,7 @@ const Content = ({
 						    				vidId={t.vidId}
 						    				fullUrl={t.url}
 						    				selected={idx === selectedThumb}
+						    				editing={idx === editingThumb}
 						    				location={location}
 						    			/>
 						    	))

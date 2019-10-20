@@ -1,13 +1,13 @@
 import React from 'react';
-import EditThumbModal from './editThumbModal';
+import ThumbModal from './thumbModal';
 import Thumb from './thumb';
 
 const EditableThumb = ({ editing, ...props }) => {
 	return (
 		<React.Fragment>
 			{
-				true ?
-					<EditThumbModal
+				editing ?
+					<ThumbModal
 						resourceTitle={props.title}
 						images={[props.imgSrc]}
 						resourceLink={props.fullUrl}

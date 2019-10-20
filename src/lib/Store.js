@@ -18,8 +18,8 @@ function reducer(state = {}, action) {
 				width: '90'
 			},
 			content: {
-				colNumber: 1,
-				rowNumber: 1,
+				colNumber: 3,
+				rowNumber: 4,
 				pageN: 0
 			},
 			thumb: {
@@ -33,6 +33,7 @@ function reducer(state = {}, action) {
 		},
 		content: tempResults,
 		selectedThumb: 0,
+		editingThumb: false,
 		mode: 'viewing results',
 		searchStatus: 'active',
 		newVideo: {

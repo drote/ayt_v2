@@ -48,6 +48,10 @@ export const getSelectedThumb = (state) => {
 	return state.selectedThumb;
 }
 
+export const getEditingThumb = (state) => {
+	return state.editingThumb;
+}
+
 export const getSelectedBorderStyle = (state) => {
 	return uiHelpers.selectedBorderStyle(state.ui.thumb.selectedBorderColor);
 }
@@ -74,10 +78,6 @@ export const getImageClass = (state) => {
 
 export const getSearchErrorStatus = (state) => {
 	return state.searchStatus === 'error';
-}
-
-export const getEditingStatus = (state) => {
-	return state.mode === 'editadd resource';
 }
 
 export const getContent = (state) => {
