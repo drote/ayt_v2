@@ -12,14 +12,14 @@ import {
   getSearchErrorStatus,
 } from '../lib/selectors';
 
-const editingEnabled = (location) => {
-  return queryString.parse(location.search).editing === 'true'
-       && location.pathname.match('/home');
-}
+// const editingEnabled = (location) => {
+//   return queryString.parse(location.search).editing === 'true'
+//        && location.pathname.match('/home');
+// }
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    showEditButtons: editingEnabled(ownProps.location),
+    editMode: ownProps.editingEnabled,
     selected: ownProps.selected,
     height: getThumbHeight(state),
     selectedBorderStyle: getSelectedBorderStyle(state),

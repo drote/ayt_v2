@@ -8,23 +8,18 @@ class ToggleNewThumb extends React.Component {
 
 	render() {
 		return (
-			showModal ?
+			this.state.showModal ?
 				<ThumbModal />
 			:
-				<div
-					className="column"
-					style={{height: this.props.height}}
-				>
-
-					<div className="ui fluid card thumbnail">
-						<div className="ui basic center aligned segment">
-							<button className="ui icon button huge circular">
-								<i class="add icon"></i>
-							</button>
-						</div>
+				<div className="column">
+					<div className="ui basic segment">
+						<button className="ui fluid blue icon button massive">
+							<i class="add icon"></i>
+						</button>
 					</div>
-					
 				</div>
 		)
 	}
 }
+
+export default ToggleNewThumb;

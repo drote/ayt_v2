@@ -6,7 +6,7 @@ const Thumb = ({
 	title,
 	imgSrc,
 	height,
-	showEditButtons,
+	editMode,
 	selected,
 	textRowNumber,
 	titleSize,
@@ -25,7 +25,7 @@ const Thumb = ({
 		  <div className="ui fluid card thumbnail">
 
 		  	{
-		  		showEditButtons ?
+		  		editMode ?
 		  			<div>
 				  		<a class="ui yellow right corner label">
 				        <i class="edit icon"></i>

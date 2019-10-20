@@ -3,7 +3,6 @@ import { Route, Switch } from 'react-router-dom';
 import TopNav from './containers/topNav';
 import Content from './containers/content';
 import SideButtons from './containers/sideButtons';
-import queryString from 'query-string';
 
 function App() {
   return (

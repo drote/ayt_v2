@@ -1,6 +1,5 @@
 import React from 'react';
 
-
 const SideButtons = ({ width, renderButtons, side }) => {
 	return (
 		<div id="side-buttons" style={{

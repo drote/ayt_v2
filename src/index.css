@@ -100,6 +100,10 @@ code {
 	margin-top: -50px;
 }
 
+#add-new-button {
+/*	transform: translateY(-50%);
+*/}
+
 .content > .segment > h2 {
 	margin-top: 0.5rem;
 }

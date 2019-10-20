@@ -1,5 +1,6 @@
 import React from 'react';
 import EditableThumb from '../containers/editableThumb';
+import ToggleNewThumb from './toggleNewThumb';
 import { numToWord } from '../lib/helpers';
 import { contentForPage } from '../lib/helpers';
 
@@ -11,8 +12,11 @@ const Content = ({
 		resultsPerPage,
 		pageN,
 		gridClass,
-		location
+		editingEnabled
 	}) => {
+
+	const contentToRender = editingEnabled ? content :
+		contentForPage(content, pageN, resultsPerPage);
 
 	return (
 	  <div id="content">
@@ -21,8 +25,7 @@ const Content = ({
 	    			'active': (
 	    				<div className={gridClass}>
 		    				{
-				    			contentForPage(content, pageN, resultsPerPage)
-				    				.map((t, idx) => (
+				    			contentToRender.map((t, idx) => (
 					    				<EditableThumb
 						    				key={idx}
 						    				title={t.title}
@@ -31,9 +34,15 @@ const Content = ({
 						    				fullUrl={t.url}
 						    				selected={idx === selectedThumb}
 						    				editing={idx === editingThumb}
-						    				location={location}
+						    				editingEnabled={editingEnabled}
 						    			/>
 						    	))
+			    			}
+			    			{
+			    				editingEnabled ?
+			    					<ToggleNewThumb />
+			    				:
+			    					null
 			    			}
 		    			</div>
 	    			),
