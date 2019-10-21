@@ -5,31 +5,26 @@ import { tempResults } from './tmp';
 
 function reducer(state = {}, action) {
 	return {
-		ui: {
-			sideBar: {
-				width: '10',
-				position: 'left',
-				showActionButtons: false
-			},
-			heading: {
-				position: 'right',
-				imgUrl: 'https://i.ytimg.com/vi/J5wuB_p63YM/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLC09e8FjLfUzzhADR5WOVyJIueCIg',
-				title: 'A thing',
-				width: '90'
-			},
-			content: {
-				colNumber: 3,
-				rowNumber: 4,
-				pageN: 0
-			},
-			thumb: {
-				selectedBorderColor: 'red'
-			},
-			modal: {
-				title: '',
-				imgUrl: '',
-				resourceUrl: ''
-			}
+		content: {
+			pageN: 0
+		},
+		heading: {
+			imgUrl: 'https://i.ytimg.com/vi/J5wuB_p63YM/hqdefault.jpg?sqp=-oaymwEZCNACELwBSFXyq4qpAwsIARUAAIhCGAFwAQ==&rs=AOn4CLC09e8FjLfUzzhADR5WOVyJIueCIg',
+			title: 'A thing',
+		},
+		settings: {
+			gaActive: true,
+			gaRestMode: false,
+			clickDelay: 5000,
+			selectDelay: 2500,
+			rowNumber: 4,
+			colNumber: 3,
+			backgroundColor: '#a7a7a7',
+			highlightColor: '#ff0000',
+			sideBarPosition: 'left',
+			sideBarWidth: '10',
+			openInYT: false,
+			showActionButtons: false
 		},
 		content: tempResults,
 		selectedThumb: 0,

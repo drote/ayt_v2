@@ -12,11 +12,6 @@ import {
   getSearchErrorStatus,
 } from '../lib/selectors';
 
-// const editingEnabled = (location) => {
-//   return queryString.parse(location.search).editing === 'true'
-//        && location.pathname.match('/home');
-// }
-
 const mapStateToProps = (state, ownProps) => {
   return {
     editMode: ownProps.editingEnabled,
