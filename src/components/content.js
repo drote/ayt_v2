@@ -12,8 +12,10 @@ const Content = ({
 		resultsPerPage,
 		pageN,
 		gridClass,
-		editingEnabled
+		editingEnabled,
+		onSearchPage
 	}) => {
+	if (onSearchPage) return null;
 
 	const contentToRender = editingEnabled ? content :
 		contentForPage(content, pageN, resultsPerPage);
@@ -51,8 +53,7 @@ const Content = ({
 	    			),
 	    			'loading': (
 				    	<div className="ui massive active loader"></div>
-						),
-	    			'inactive': null
+						)
 	    		}[status]
 	    	}
 	  </div>

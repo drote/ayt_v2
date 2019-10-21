@@ -1,6 +1,5 @@
-import React from 'react';
 import { connect } from 'react-redux';
-import queryString from 'query-string';
+import { editingEnabled, searchPage } from '../lib/helpers';
 import Content from '../components/content';
 
 import {
@@ -13,11 +12,6 @@ import {
     getEditedThumbIdx
 } from '../lib/selectors';
 
-const editingEnabled = (location) => {
-  return !!(queryString.parse(location.search).editing === 'true'
-       && location.pathname.match('/home'));
-}
-
 const mapStateToProps = (state, ownProps) => {  
   return {
     content: getContent(state),
@@ -27,7 +21,8 @@ const mapStateToProps = (state, ownProps) => {
     pageN: getPageN(state),
     resultsPerPage: getResultsPerPage(state),
     status: getSearchStatus(state),
-    editingEnabled: editingEnabled(ownProps.location)
+    editingEnabled: editingEnabled(ownProps.location),
+    onSearchPage: searchPage(ownProps.location)
   };
 }
 

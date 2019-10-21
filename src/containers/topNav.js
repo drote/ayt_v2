@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import TopNav from '../components/topNav';
 import { getPageHeading, getSearchStatus, getHeadingImage, getMainWidth, getMainPos } from '../lib/selectors';
@@ -10,7 +9,8 @@ const mapStateToProps = (state, ownProps) => {
     img: getHeadingImage(state),
     width: getMainWidth(state),
     side: getMainPos(state),
-    homePage: ownProps.location.pathname.match('/home')
+    homePage: ownProps.location.pathname.match('/home'),
+    location: ownProps.location
   };
 }
 

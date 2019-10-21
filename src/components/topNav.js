@@ -1,45 +1,60 @@
 import React from 'react';
 import logo from './../logo.png';
+import { Link, Redirect } from 'react-router-dom'
 import NavSearchBar from './navSearchBar';
 import NavResultDisplay from './navResultDisplay';
+import { editingEnabled, searchPage } from '../lib/helpers';
+import { homepage, homepageEdit } from '../constants/urls';
 
-const TopNav = ({ status, onSearch, heading, img, width, side, homePage }) => {
+const TopNav = ({ status, onSearch, heading, img, width, side, homePage, location }) => {
+	const settingsHref = editingEnabled(location) ? homepage : homepageEdit;
+	const onSearchPage = searchPage(location);
+
 	return (
 		<header
 			style={{
 				float: side,
-				width: `${width}%`
+				width
 			}}>
 
 			<div className="ui borderless menu">
 
-				<a className="item">
+				<Link
+					to="/settings"
+					className="item"
+					
+				>
 					<i className="big settings icon"></i>
-				</a>
+				</Link>
 
-				<a className="item">
+				<Link
+					to="/home"
+					className="item">
 					<i className="big user icon"></i>
-				</a>
+				</Link>
 
 				{
 					homePage ?
-						<a className="ui icon item">
+						<Link
+							to={settingsHref}
+							className="ui icon item"
+						>
 		          <i className="big edit icon"></i>
-		        </a>
+		        </Link>
 		      :
 		      null
 		    }
 		    
 				{
-					status === 'active' ?
-						<NavResultDisplay
-							heading={heading}
-							imgUrl={img}
-						/>
-					:
+					onSearchPage ?
 						<NavSearchBar
 							onSearch={onSearch}
 							loading={status === 'loading'}
+						/>
+					:
+						<NavResultDisplay
+							heading={heading}
+							imgUrl={img}
 						/>
 				}
 

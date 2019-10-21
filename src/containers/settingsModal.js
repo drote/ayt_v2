@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 
 import SettingsModal from '../components/settingsModal';
@@ -10,7 +9,8 @@ import {
 const mapStateToProps = (state, ownProps) => {
 	const settings = getSettings(state);
 	return {
-		settings
+		settings,
+		history: ownProps.history
 	}
 }
 

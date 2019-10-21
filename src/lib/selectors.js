@@ -101,5 +101,5 @@ export const getSettings = (state) => {
 }
 
 export const getContent = (state) => {
-	return state.content;
+	return state.content.thumbs;
 }

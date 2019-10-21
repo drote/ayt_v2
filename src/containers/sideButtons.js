@@ -1,4 +1,3 @@
-import React from 'react';
 import { connect } from 'react-redux';
 import SideButtons from '../components/sideButtons';
 import { getSideBarWidth, getButtonsActiveStatus, getSideBarPos } from '../lib/selectors';

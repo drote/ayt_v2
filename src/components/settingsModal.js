@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 class SettingsModal extends React.Component {
 	state = {
@@ -23,11 +24,23 @@ class SettingsModal extends React.Component {
 		})
 	}
 
+	handleExit = () => {
+		this.props.history.goBack();
+	}
+
 	render() {
+		console.log(this.props.location)
 		return (
-			<div className="ui active dimmer">
+			<div
+				className="ui active dimmer"
+				onClick={this.handleExit}
+			>
 				<div id="settings" className="ui active modal">
-					<i className="close icon"></i>
+					
+					<i
+						className="close icon"
+						onClick={this.handleExit}>
+					</i>
 
 					<div className="header">
 						<h1>הגדרות</h1>
@@ -244,7 +257,11 @@ class SettingsModal extends React.Component {
 
 					  <div className="ui red deny right labeled icon button">
 		      		ביטול
-		      		<i className="remove icon"></i>
+		      		<i
+		      			className="remove icon"
+		      			onClick={this.handleExit}
+		      		>
+		      		</i>
 				    </div>
 				  </div>
 
