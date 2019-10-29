@@ -27,7 +27,10 @@ class Main extends React.Component {
 		return (
 			<React.Fragment>
 		    <TopNav location={this.props.location} />
-		    <Content location={this.props.location} />
+
+		    { this.searchPage(this.props.location) ? null :
+		    	<Content location={this.props.location} />
+		  	}
 			</React.Fragment>
 		)
 	}

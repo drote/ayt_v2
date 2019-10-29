@@ -7,10 +7,10 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 import 'semantic-ui-css/semantic.min.css'
 
-import { createStore } from './lib/Store.js';
+import { store } from './lib/Store.js';
 
 ReactDOM.render(
-	<Provider store={createStore()}>
+	<Provider store={store}>
 		<Router>
 			<App />
 		</Router>

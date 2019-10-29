@@ -13,7 +13,10 @@ const NavResultDisplay = ({ heading, imgUrl }) => {
 					{
 						imgUrl ? 
 							<div id="header-image" className="ui small image">
-			  					<img src={imgUrl} />
+			  					<img
+			  						src={imgUrl}
+			  						alt={heading}
+			  					/>
 							</div>
 						:
 							null

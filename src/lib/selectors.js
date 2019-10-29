@@ -44,8 +44,12 @@ export const getResultsPerPage = (state) => {
 	return state.settings.colNumber * state.settings.rowNumber;
 }
 
-export const getSelectedThumb = (state) => {
-	return state.selectedThumb;
+export const getRowLength = (state) => {
+	return state.settings.colNumber;
+}
+
+export const getSelectedThumbIdx = (state) => {
+	return state.selectedThumb.idx;
 }
 
 export const getModalActiveStatus = (state) => {

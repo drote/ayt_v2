@@ -1,26 +1,24 @@
 import { connect } from 'react-redux';
 import queryString from 'query-string';
-import EditableThumb from '../components/editableThumb';
+import Thumb from '../components/thumb';
 import {
   getThumbHeight,
   getSelectedBorderStyle,
   getNumberOfTextRows,
   getImageClass,
   getTitleSize,
-  getSearchStatus,
   getSearchErrorStatus,
 } from '../lib/selectors';
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    editMode: ownProps.editingEnabled,
+    editMode: ownProps.editingEnabled, // TODOD take from selector / helper
     selected: ownProps.selected,
     height: getThumbHeight(state),
     selectedBorderStyle: getSelectedBorderStyle(state),
     numberOfTextRows: getNumberOfTextRows(state),
     imageClass: getImageClass(state),
     titleSize: getTitleSize(state),
-    status: getSearchStatus(state),
     ...ownProps
   };
 }
@@ -34,4 +32,4 @@ const mapDispatchToProps = (dispatch, ownProps) => {
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(EditableThumb);
+)(Thumb);

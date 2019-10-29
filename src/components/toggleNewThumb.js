@@ -14,7 +14,7 @@ class ToggleNewThumb extends React.Component {
 				<div className="column">
 					<div className="ui basic segment">
 						<button className="ui fluid blue icon button massive">
-							<i class="add icon"></i>
+							<i className="add icon"></i>
 						</button>
 					</div>
 				</div>

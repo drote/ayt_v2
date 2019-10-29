@@ -1,6 +1,6 @@
 import React from 'react';
 import ThumbModal from '../containers/thumbModal';
-import Thumb from './thumb';
+import Thumb from '../containers/thumb';
 
 const EditableThumb = ({ editing, ...props }) => {
 	return (
