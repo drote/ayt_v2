@@ -1,4 +1,4 @@
-export const move = (targetIdx) => {
+export const move = (targetIdx, vidsPerPage) => {
 	console.log(targetIdx);
-	return { type: 'MOVE', payload: targetIdx };
+	return { type: 'MOVE', payload: { targetIdx, vidsPerPage } };
 }

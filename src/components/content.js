@@ -2,7 +2,7 @@ import React from 'react';
 import EditableThumb from './editableThumb';
 import ToggleNewThumb from './toggleNewThumb';
 import { numToWord } from '../lib/helpers';
-import { contentForPage, editingEnabled } from '../lib/helpers';
+import { pageRange, editingEnabled } from '../lib/helpers';
 
 class Content extends React.Component {
 	constructor(props) {
@@ -27,7 +27,12 @@ class Content extends React.Component {
 	}
 
 	onKeyPressEvent = (evt) => {
-		this.props.handleArrowPress(evt.key, this.props.selectedThumbIdx, this.props.rowLength);
+		this.props.handleArrowPress(
+			evt.key,
+			this.props.selectedThumbIdx,
+			this.props.rowLength,
+			this.props.resultsPerPage
+		);
 	}
 
 	render() {
@@ -43,8 +48,8 @@ class Content extends React.Component {
 			onSearchPage
 		} = this.props;
 
-		const contentToRender = editingEnabled ? content :
-			contentForPage(content, pageN, resultsPerPage);
+		const pageHiLo = pageRange(this.props.pageN, this.props.resultsPerPage);
+		const contentToRender = editingEnabled ? content : content.slice(pageHiLo[0], pageHiLo[1]);
 
 		return (
 		  <div
@@ -61,14 +66,13 @@ class Content extends React.Component {
 					    			contentToRender.map((t, idx) => (
 						    				<EditableThumb
 							    				key={idx}
-							    				idx={idx}
 							    				title={t.title}
 							    				imgSrc={t.imgUrl}
 							    				vidId={t.vidId}
 							    				fullUrl={t.url}
 							    				editing={idx === editedThumbIdx}
 							    				editingEnabled={editingEnabled}
-							    				selected={idx === selectedThumbIdx}
+							    				selected={this.props.content.indexOf(t) === selectedThumbIdx}
 							    				status={status}
 							    			/>
 							    	))

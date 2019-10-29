@@ -1,5 +1,5 @@
-import { tempResults } from '../lib/tmp';
 import selectedThumbReducer from './selectedThumbReducer';
+import contentReducer from './contentReducer';
 
 const rootReducer = (state = {}, action) => {
 	return {
@@ -22,10 +22,7 @@ const rootReducer = (state = {}, action) => {
 			openInYT: false,
 			showActionButtons: false
 		},
-		content: {
-			pageN: 0,
-			thumbs: tempResults
-		},
+		content: contentReducer(state.content, action),
 		selectedThumb: selectedThumbReducer(state.selectedThumb, action),
 		mode: 'viewing results',
 		searchStatus: 'active',

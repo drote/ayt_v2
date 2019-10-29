@@ -32,8 +32,8 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    handleArrowPress: (arrow, selectedIdx, rowLength) => {
-      dispatch(Actions.move(moves(arrow, selectedIdx, rowLength)));
+    handleArrowPress: (arrow, selectedIdx, rowLength, vidsPerPage) => {
+      dispatch(Actions.move(moves(arrow, selectedIdx, rowLength), vidsPerPage));
     },
   }
 }

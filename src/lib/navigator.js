@@ -1,4 +1,4 @@
-import MAXIMUM_ALLOWED_VIDEOS from '../constants/video';
+import { MAXIMUM_ALLOWED_VIDEOS } from '../constants/video';
 
 export const moves = (direction, idx, rowLength) => {
 	return {
@@ -27,7 +27,7 @@ export const moves = (direction, idx, rowLength) => {
 
 			return res;
 		}
-	}[direction](idx, rowLength)
+	}[direction](idx, rowLength);
 }
 
 
